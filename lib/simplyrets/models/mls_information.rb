@@ -116,7 +116,7 @@ module SimplyRetsClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      status_validator = EnumAttributeValidator.new('String', ["Active", "ActiveUnderContract (Backup-Offer)", "Pending", "Hold", "Withdrawn", "Closed", "Expired", "Delete", "Incomplete", "ComingSoon"])
+      status_validator = EnumAttributeValidator.new('String', ["Active", "ActiveUnderContract", "Pending", "Hold", "Withdrawn", "Closed", "Expired", "Delete", "Incomplete", "ComingSoon"])
       return false unless status_validator.valid?(@status)
       return true
     end
@@ -124,7 +124,7 @@ module SimplyRetsClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status Object to be assigned
     def status=(status)
-      validator = EnumAttributeValidator.new('String', ["Active", "ActiveUnderContract (Backup-Offer)", "Pending", "Hold", "Withdrawn", "Closed", "Expired", "Delete", "Incomplete", "ComingSoon"])
+      validator = EnumAttributeValidator.new('String', ["Active", "ActiveUnderContract", "Pending", "Hold", "Withdrawn", "Closed", "Expired", "Delete", "Incomplete", "ComingSoon"])
       unless validator.valid?(status)
         fail ArgumentError, "invalid value for 'status', must be one of #{validator.allowable_values}."
       end
