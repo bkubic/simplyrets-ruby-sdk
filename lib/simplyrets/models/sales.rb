@@ -57,7 +57,7 @@ module SimplyRetsClient
     def self.swagger_types
       {
         :'close_date' => :'DateTime',
-        :'office' => :'String',
+        :'office' => :'Office',
         :'close_price' => :'Integer',
         :'agent' => :'String',
         :'contract_date' => :'DateTime'
